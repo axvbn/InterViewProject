@@ -147,6 +147,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\M_Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,16 +2,10 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <h2>北風產品分類</h2>
-    <a href="~/Category/Insert" class="btn btn-primary">新增</a>
-    <input type="button" id="btnQuery" class="btn btn-default" value="查詢"/>
+    <h1>北風產品分類</h1>
+    <input type="button" id="btnQuery" class="btn btn-warning" value="查詢" />
+    <input type="button" id="btnInsert" class="btn btn-primary" value="新增" />
     <table class="table table-bordered table-hover" id="CategoriesTB">
         <thead>
             <tr>
@@ -26,6 +20,47 @@
            
         </tbody>
     </table>
+</div>
+
+@*新增modal*@
+<div class="modal" tabindex="-1" role="dialog" id="InsertModal">
+    <div class="modal-dialog" role="document" style="max-width:550px !important">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">產品分類 新增</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body A100modalBody">
+                <table class="A100modalTable">
+                    <tr>
+                        <td><b>分類編號：</b></td>
+                        <td>
+                            <input type="text" id="Modal_CategoryID" name="Modal_PageNo" class="form-control" style="width:100px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>分類名稱：</b></td>
+                        <td>
+                            <input type="text" id="Modal_CategoryName" name="Modal_PageNo" class="form-control" style="width:300px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>描述：</b></td>
+                        <td>
+                            <input type="text" id="Modal_Description" name="Modal_PageNo" class="form-control" style="width:300px" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="Modal_btnINSERT" class="btn btn-primary">新增</button>
+                <button type="button" id="Modal_btnUPDATE" class="btn btn-primary">編輯</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section scripts{

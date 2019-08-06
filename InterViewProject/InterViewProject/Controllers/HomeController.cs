@@ -1,4 +1,5 @@
 ﻿using InterViewProject.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,8 +20,19 @@ namespace InterViewProject.Controllers
         {
             M_Index MI = new M_Index();
             string strJson = MI.Query();
+           
 
             return Json(strJson);
+        }
+
+        public string Index_Insert(string jData)
+        {
+            string result = string.Empty;
+            M_Index MI = new M_Index();
+            Categories myCategories = JsonConvert.DeserializeObject<Categories>(jData);
+            result = MI.Insert(myCategories);
+
+            return result;
         }
 
         public ActionResult About()
